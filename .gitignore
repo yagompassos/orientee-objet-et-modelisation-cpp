@@ -1,3 +1,4 @@
 # Ignorar qualquer arquivo terminado em .exe ou .bin
 **/*.exe
 **/*.bin
+.vscode/*

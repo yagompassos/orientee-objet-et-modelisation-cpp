@@ -23,11 +23,15 @@ public:
     // getters
     std::string getNom();
     std::string getPrenom();
+    int getAge();
+    Genre getGenre();
     // setters
     void setNom(std::string nouveauNom);
     void setPrenom(std::string nouveauPrenom);
+    void setAge(int nouvelleAge);
+    void setGenre(Genre nouveauGenre);
     // methods
-    virtual std::string identifier();
+    virtual std::string identifier() = 0; // This turns the method in pure virtual
 };
 
 

@@ -1,7 +1,10 @@
 #include <iostream>
 #include "Etudiant.hpp"
+#include "Cours.hpp" 
 
-Etudiant::Etudiant (std::string nom, std::string prenom, int age, Genre genre, std::string matricule) : Personne(nom, prenom, age, genre), matricule(matricule) {};
+Etudiant::Etudiant (std::string nom, std::string prenom, int age, Genre genre, std::string matricule) : Personne(nom, prenom, age, genre), matricule(matricule), bulletin() {};
+
+Etudiant::Etudiant (const Etudiant & etu): Personne(etu), matricule(etu.matricule), notes(etu.notes) {}
 
 // getters
 std::vector<float> Etudiant::getNotes(){return notes;}
@@ -22,3 +25,14 @@ float Etudiant::calculMoyenne(){
 std::string Etudiant::identifier(){
     return  Personne::identifier() + ". Matricule: " + matricule;
 };
+
+void Etudiant::ajouterCours(Cours* c) {
+    courses.push_back(c);
+}
+
+void Etudiant::afficherCoursSuivis(){
+    for (auto c : courses){
+        c->afficherCours();
+    }
+
+}

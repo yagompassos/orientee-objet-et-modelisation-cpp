@@ -13,10 +13,14 @@ Personne::~Personne() {
 // getters
 std::string Personne::getNom() {return nom;}
 std::string Personne::getPrenom() {return prenom;}
+int Personne::getAge(){return age;}
+Genre Personne::getGenre(){return genre;}
 
 // setters
-void Personne::setNom(std::string nouvelNom){nom = nouvelNom;}
-void Personne::setPrenom(std::string nouvelPrenom){nom = nouvelPrenom;}
+void Personne::setNom(std::string nouveauNom){nom = nouveauNom;}
+void Personne::setPrenom(std::string nouveauPrenom){nom = nouveauPrenom;}
+void Personne::setAge(int nouvelleAge){age = nouvelleAge;}
+void Personne::setGenre(Genre nouveauGenre) {genre = nouveauGenre;}
 
 // Functions
 std::string Personne::identifier(){
